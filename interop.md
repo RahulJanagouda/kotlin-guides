@@ -289,7 +289,7 @@ public static void main(String... args) {
 
 ## Function overloads for defaults
 
-Functions with parameters having a default value must use `@JvmOverloads`. Without this annotation it is impossible to invoke the function using any default values.
+Functions with parameters having a default value must use `@JvmOverloads`. Without this annotation, it is impossible to invoke the function using any default values.
 
 When using `@JvmOverloads`, inspect the generated methods to ensure they each make sense. If they do not, perform one or both of the following refactorings until satisfied:
 
