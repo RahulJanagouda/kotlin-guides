@@ -8,7 +8,7 @@ site_nav_category: style
 
 This document serves as the complete definition of Google's Android coding standards for source code in the Kotlin Programming Language. A Kotlin source file is described as being in Google Android Style if and only if it adheres to the rules herein.
 
-Like other programming style guides, the issues covered span not only aesthetic issues of formatting, but other types of conventions or coding standards as well. However, this document focuses primarily on the hard-and-fast rules that we follow universally, and avoids giving advice that isn't clearly enforceable (whether by human or tool).
+Like other programming style guides, the issues covered span not only aesthetic issues of formatting but other types of conventions or coding standards as well. However, this document focuses primarily on the hard-and-fast rules that we follow universally and avoids giving advice that isn't clearly enforceable (whether by human or tool).
 
 _<a href="changelog.html">Last update: {{ site.changes.first.date | date: "%Y-%m-%d" }}</a>_
 
@@ -18,7 +18,7 @@ All source files must be encoded as UTF-8.
 
 ## Naming
 
-If a source file contains only a single top-level class, the file name should reflect the case-sensitive name plus the `.kt` extension. Otherwise, if a source file contains multiple top-level declarations, choose a name the describes the contents of the file, apply PascalCase, and append the `.kt` extension.
+If a source file contains only a single top-level class, the file name should reflect the case-sensitive name plus the `.kt` extension. Otherwise, if a source file contains multiple top-level declarations, choose a name that describes the contents of the file, apply PascalCase, and append the `.kt` extension.
 
 ```kotlin
 // Foo.kt
@@ -241,7 +241,7 @@ Each statement is followed by a line break. Semicolons are not used.
 
 ## Line wrapping
 
-Code has a column limit of 100 characters. Except as noted below, any line that would exceed this limit must be line-wrapped, as explained below.
+The code has a column limit of 100 characters. Except as noted below, any line that would exceed this limit must be line-wrapped, as explained below.
 
 Exceptions:
 
@@ -262,14 +262,14 @@ The prime directive of line-wrapping is: prefer to break at a **higher syntactic
  4. A comma (`,`) stays attached to the token that precedes it.
  5. A lambda arrow (`->`) stays attached to the argument list what precedes it.
 
-Note: The primary goal for line wrapping is to have clear code, _not necessarily_ code that fits in the smallest number of lines.
+Note: The primary goal for line wrapping is to have a clear code, _not necessarily_ code that fits in the smallest number of lines.
 
 
 ### Continuation indent
 
 When line-wrapping, each line after the first (each _continuation line_) is indented at least +8 from the original line.
 
-When there are multiple continuation lines, indentation may be varied beyond +8 as desired. In general, two continuation lines use the same indentation level if and only if they begin with syntactically parallel elements.
+When there are multiple continuation lines, the indentation may be varied beyond +8 as desired. In general, two continuation lines use the same indentation level if and only if they begin with syntactically parallel elements.
 
 ### Functions
 
@@ -333,7 +333,7 @@ A single blank line appears:
 
  1. _Between_ consecutive members of a class: properties, constructors, functions, nested classes, etc.
 
-     * **Exception**: A blank line between two consecutive properties (having no other code between them) is optional. Such blank lines are used as needed to create logical groupings of properties and associate properties with their backing property, if present.
+     * **Exception**: A blank line between two consecutive properties (having no other code between them) is optional. Such blank lines are used as needed to create logical groupings of properties and associate properties with their backing property if present.
 
      * **Exception**: Blank lines between enum constants are covered below.
 
@@ -436,7 +436,7 @@ Beyond where required by the language or other style rules, and apart from liter
         it.toString()
         ```
 
- 5. Before a colon (`:`) only if used in a class decalration for specifying a base class / interfaces or when used in a `where` clause for [generic constraints](https://kotlinlang.org/docs/reference/generics.html#generic-constraints).
+ 5. Before a colon (`:`) only if used in a class declaration for specifying a base class / interfaces or when used in a `where` clause for [generic constraints](https://kotlinlang.org/docs/reference/generics.html#generic-constraints).
 
     ```kotlin
     // WRONG!
@@ -583,7 +583,7 @@ package com.example.deep_space
 
 ## Type names
 
-Class names are written in PascalCase and are typically nouns or noun phrases. For example, `Character` or `ImmutableList`. Interface names may also be nouns or noun phrases (for example, `List`), but my sometimes be adjectives or adjective phrases instead (for example `Readable`).
+Class names are written in PascalCase and are typically nouns or noun phrases. For example, `Character` or `ImmutableList`. Interface names may also be nouns or noun phrases (for example, `List`), but sometimes be adjectives or adjective phrases instead (for example `Readable`).
 
 Test classes are named starting with the name of the class they are testing, and ending with `Test`. For example, `HashTest` or `HashIntegrationTest`.
 
@@ -617,7 +617,7 @@ val EMPTY_ARRAY = arrayOf<SomeMutableType>()
 
 These names are typically nouns or noun phrases.
 
-Constant values can only be defined in side of an `object` or as a top-level declaration. Values otherwise meeting the requirement of a constant but defined inside of a `class` must use a non-constant name.
+Constant values can only be defined inside of an `object` or as a top-level declaration. Values otherwise meeting the requirement of a constant but defined inside of a `class` must use a non-constant name.
 
 Constants which are scalar values must use the [`const` modifier](http://kotlinlang.org/docs/reference/properties.html#compile-time-constants).
 
@@ -665,13 +665,13 @@ Each type variable is named in one of two styles:
 
 ## Camel case
 
-Sometimes there is more than one reasonable way to convert an English phrase into camel case, such as when acronyms or unusual constructs like "IPv6" of "iOS" are present. To improve predictability, use the following scheme.
+Sometimes there is more than one reasonable way to convert an English phrase into camel case, such as when acronyms or unusual constructs like "IPv6" or "iOS" are present. To improve predictability, use the following scheme.
 
 Beginning with the prose form of the name:
 
- 1. Convert the phrase to plain ASCII and remove any apostrophes. For example, "Müller's algorithm" might become "Muellers algorithm".
+ 1. Convert the phrase to plain ASCII and remove any apostrophes. For example, "Müller's algorithm" might become "Mueller's algorithm".
 
- 2. Divide this result into words, splitting on spaces and any remaining punctuation (typically hyphens).
+ 2. Divide this result into words, splitting into spaces and any remaining punctuation (typically hyphens).
 
     * _Recommended_: if any word already has a conventional camel-case appearance in common usage, split this into its constituent parts (e.g., "AdWords" becomes "ad words"). Note that a word such as "iOS" is not really in camel case _per se_; it defies _any_ convention, so this recommendation does not apply.
 
