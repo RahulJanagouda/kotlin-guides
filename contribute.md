@@ -8,7 +8,7 @@ is_site_nav_category: true
 
 Contributions to this website are welcome and appreciated!
 
-To contribute to this website, feel free to create pull requests for small fixes. For bigger contributions we recommend to start an issue on the [issue tracker](https://github.com/android/kotlin-guides/issues) first.
+To contribute to this website, feel free to create pull requests for small fixes. For bigger contributions, we recommend starting an issue on the [issue tracker](https://github.com/android/kotlin-guides/issues) first.
 
 Pull requests should be made targeting the `master` branch. Every few weeks, the [change log](changelog.html) will be updated and all changes in that time period will be released to the `gh-pages` branch.
 
@@ -25,7 +25,7 @@ Ensure that you have Ruby and [Bundler](http://bundler.io/) installed.
 
     bundle install --path vendor/bundle
 
-_Note: If you're on Mac OS and this fails installing nokogiri, run `brew unlink xz`, install, and then `brew link xz`._
+_Note: If you're on Mac OS and this fails to install nokogiri, run `brew unlink xz`, install, and then `brew link xz`._
 
 ### Running the site
 
